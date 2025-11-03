@@ -1,0 +1,17 @@
+# version: "3"
+
+services:
+
+  mysql:
+    image: mariadb:latest
+    container_name: smserver
+    environment:
+      MARIADB_ROOT_PASSWORD: ${MARIADB_ROOT_PASSWORD}
+    volumes:
+        # - mariadb_volume:/var/lib/mysql
+        - ./db:/var/lib/mysql
+        - ./my.cnf:/etc/mysql/my.cnf
+    networks:
+        - smserver_network
+    ports:
+        - 3306:3306
