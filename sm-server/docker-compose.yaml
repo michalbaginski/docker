@@ -11,7 +11,5 @@ services:
         # - mariadb_volume:/var/lib/mysql
         - ./db:/var/lib/mysql
         - ./my.cnf:/etc/mysql/my.cnf
-    networks:
-        - smserver_network
     ports:
         - 3306:3306
